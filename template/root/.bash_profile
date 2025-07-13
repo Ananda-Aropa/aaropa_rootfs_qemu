@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# Run autostart scripts
+for script in ~/.config/autostart/*.sh; do
+  if [ -x "$script" ]; then
+    "$script" &
+  fi
+done
+
 # Reload input devices
 udevadm trigger
 

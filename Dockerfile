@@ -1,4 +1,4 @@
-FROM ghcr.io/shadichy/aaropa_rootfs_base:main
+FROM ghcr.io/ananda-aropa/aaropa_rootfs_builder:minimal
 
 COPY template /
 COPY packages /

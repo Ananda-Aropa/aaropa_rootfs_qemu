@@ -1,8 +1,6 @@
 name: Generate qemu aaropa image
 
 on:
-  schedule:
-    - cron: "0 0 15 * *"
   push:
     branches:
       - main
