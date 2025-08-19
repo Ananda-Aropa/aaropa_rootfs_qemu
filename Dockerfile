@@ -4,13 +4,13 @@ COPY template /
 COPY packages /
 COPY scripts /
 
-RUN apt update && apt upgrade -y
+RUN apt update && apt upgrade -y --allow-unauthenticated
 
 # Create needed folders
 RUN mkdir -p /boot
 
 # Install package list
-RUN grep -Ev '^#' /pkglist.cfg | xargs apt install -y --no-install-recommends --no-install-suggests
+RUN grep -Ev '^#' /pkglist.cfg | xargs apt install -y --no-install-recommends --no-install-suggests --allow-unauthenticated
 
 # Post setup
 RUN /post-setup.sh
